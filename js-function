@@ -1,0 +1,44 @@
+$ = jQuery;
+
+var bedsearch 		= $("#bed-search");
+var bedsearchform 	= bedsearch.find("form");
+
+bedsearchform.submit(function(e){
+e.preventDefault();
+
+var pocket = 0;
+if(bedsearch.find("#with-pocket").prop("checked")) {
+	pocket = 1;
+}
+var data = {
+	action : "bed_search",
+	type : bedsearch.find("#bed-type").val(),
+	size : bedsearch.find("#bed-size").val(),
+	with_pocket : pocket
+};
+
+$.ajax({
+	url : "http://localhost/customwp/wp-admin/admin-ajax.php",
+	data: data,
+	'success' : function(response){
+		
+		bedsearch.find("ul").empty();
+		
+		for(var i = 0; i < response.length; i++){
+			console.log(response[i]);
+			var html = "<li id='bed-id"+ response[i].id+"'><a href='"+response[i].permalink+"'>"+response[i].title+"</a></li>";
+			bedsearch.find("ul").append(html);			
+		}
+
+
+	}
+});
+});
+
+
+
+
+
+
+
+
