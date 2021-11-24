@@ -1,0 +1,27 @@
+
+
+	<div id="bed-search">
+<form action="" method="get">
+	<label for="bed-type">Type</label>
+	<select id="bed-type" name="bed-type">
+		<option value="no">No Base</option>
+		<option value="platform">Platform Base</option>
+		<option value="2">2 Drw Base</option>
+		<option value="4">4 Drw Base</option>
+	</select>
+
+
+	<label for="bed-size">Size</label>
+	<select id="bed-size" name="bed-size">
+		<option value="90cm">90cm</option>
+		<option value="135cm">135cm</option>
+		<option value="150cm">150cm</option>
+		<option value="180cm">180cm</option>
+	</select>
+	<label for="with-pocket">With Pocket</label>
+	<input type="checkbox" name="with-pocket" id="with-pocket">
+	<br />
+	<button type="submit">Search</button>
+</form>
+<ul></ul>
+</div>
